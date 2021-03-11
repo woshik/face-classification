@@ -28,7 +28,7 @@ def draw_image_with_boxes(pixels, result_list):
     return(x,y,x+width,y+height)
 
 if __name__ == "__main__":
-    filename = './dataset/Real_Faces/DSC_0242.jpg'
+    filename = './dataset/sample/real/DSC_0242.jpg'
 
     detector = MTCNN()
 

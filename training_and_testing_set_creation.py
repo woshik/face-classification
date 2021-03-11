@@ -4,7 +4,7 @@ from mtcnn.mtcnn import MTCNN
 from PIL import Image
 import os
 
-path = './dataset/'
+path = './dataset/sample/'
 folders = os.listdir(path)
 detector = MTCNN()
 
@@ -31,17 +31,17 @@ def processImages(folder):
     # Iterate over the folder
     for subs in folders:
         for fileName in os.listdir(path+subs):
-            if 'Fake' in path+subs+fileName and 'jpg' in path+subs+fileName:
+            if 'fake' in path+subs+fileName and 'jpg' in path+subs+fileName:
                 location = path+subs+'/'+fileName
-                destination = 'training/fake/'+fileName
+                destination = 'dataset/training/fake/'+fileName
 
                 print(location)
 
                 cropFaceAndSaveImage(location, destination)
 
-            elif 'Real' in path+subs+fileName and 'jpg' in path+subs+fileName:
+            elif 'real' in path+subs+fileName and 'jpg' in path+subs+fileName:
                 location = path+subs+'/'+fileName
-                destination = 'training/real/'+fileName
+                destination = 'dataset/training/real/'+fileName
 
                 print(location)
 
